@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
+
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem "bootstrap_flash_messages", "~> 1.0.1"
 gem 'simple_form'
