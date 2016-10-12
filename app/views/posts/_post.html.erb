@@ -1,0 +1,19 @@
+<article class="post">
+  <div class='title'>
+    <%= post.title %>
+  </div>
+  <div class="status text-xs-right">
+    <small>
+      <%= post.user.name %>,
+      <%= localize post.created_at, format: :long %>
+      <% if user_signed_in? && current_user == post.user %>
+      	·
+        <%= link_to "Edit", edit_post_path(post)  %>
+      <% end %>
+    </small>
+  </div>
+  <div class='content'>
+    <p><%= simple_format truncate(post.content, length: 300) %></p>
+    <p><%= link_to "Read more", post, class: "btn btn-primary btn-sm" if post.content.length > 300 %></p>
+  </div>
+</article>
